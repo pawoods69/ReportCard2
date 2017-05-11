@@ -13,12 +13,12 @@ public class ReportCard {
     /**
      * ArrayList for the school subjects
      */
-    private ArrayList<String> mSubjects = new ArrayList<String>();
+    private ArrayList<String> Subjects = new ArrayList<String>();
 
     /**
      * ArrayList for the values of the grades
      */
-    private ArrayList<Double> mGrade = new ArrayList<Double>();
+    private ArrayList<Double> Grade = new ArrayList<Double>();
 
     /**
      * String for value of grades
@@ -28,7 +28,7 @@ public class ReportCard {
     /**
      * Final value of grades
      */
-    private double mFinalGrade;
+    private double FinalGrade;
 
 
     /**
@@ -44,128 +44,191 @@ public class ReportCard {
 
     public ReportCard(double englishGrade, double scienceGrade, double languageGrade, double historyGrade, double bandGrade) {
 
-        mSubjects.add(0, "English");
-        mSubjects.add(1, "Science");
-        mSubjects.add(2, "Language");
-        mSubjects.add(3, "History");
-        mSubjects.add(4, "Band");
+        Subjects.add(0, "English");
+        Subjects.add(1, "Science");
+        Subjects.add(2, "Language");
+        Subjects.add(3, "History");
+        Subjects.add(4, "Band");
 
-        mGrade.add(0, englishGrade);
-        mGrade.add(1, scienceGrade);
-        mGrade.add(2, languageGrade);
-        mGrade.add(3, historyGrade);
-        mGrade.add(4, bandGrade);
+        Grade.add(0, englishGrade);
+        Grade.add(1, scienceGrade);
+        Grade.add(2, languageGrade);
+        Grade.add(3, historyGrade);
+        Grade.add(4, bandGrade);
     }
 
 
-/** setters */
+/** setters and getters */
 
 
     /**
-     * setter for English Grade
+     * setter-getter for English Grade
      */
-    public void setmEnglishGrade(double grade) {
-        mGrade.set(0, grade);
-    }
+    public class English {
+        private String name;
+        private String grade;
 
-    /**
-     * setter for Science Grade
-     */
-    public void setmScienceGrade(double grade) {
-        mGrade.set(1, grade);
-    }
-
-    /**
-     * setter for Language Grade
-     */
-    public void setmLanguageGrade(double grade) {
-        mGrade.set(2, grade);
-    }
-
-    /**
-     * setter for History Grade
-     */
-    public void setmHistoryGrade(double grade) {
-        mGrade.set(3, grade);
-    }
-
-    /**
-     * setter for Band Grade
-     */
-    public void setmBandGrade(double grade) {
-        mGrade.set(4, grade);
-    }
-
-/** getters */
-
-
-    /**
-     * getter for English Grade
-     */
-    public double getmEnglishGrade() {
-        double grade = mGrade.get(0);
-        return grade;
-    }
-
-    /**
-     * getter for Science Grade
-     */
-    public double getmScienceGrade() {
-        double grade = mGrade.get(1);
-        return grade;
-    }
-
-    /**
-     * getter for Language Grade
-     */
-    public double getmLanguageGrade() {
-        double grade = mGrade.get(2);
-        return grade;
-    }
-
-    /**
-     * getter for History Grade
-     */
-    public double getmHistoryGrade() {
-        double grade = mGrade.get(3);
-        return grade;
-    }
-
-    /**
-     * getter for Band Grade
-     */
-    public double getmBandGrade() {
-        double grade = mGrade.get(4);
-        return grade;
-    }
-
-    /**
-     * final grade calculation of all subjects
-     */
-    public double getmFinalGrade() {
-        mFinalGrade = 0.0;
-        for (int i = 0; i < mGrade.size(); i++) {
-            double grade = mGrade.get(i);
-            mFinalGrade = mFinalGrade + grade;
+        public English(String name, String grade) {
+            this.name = name;
+            this.grade = grade;
         }
-        mFinalGrade = mFinalGrade / mGrade.size();
-        return mFinalGrade;
-    }
 
-    /**
-     * toString method which returns the contents of the class
-     */
-    @Override
-    public String toString() {
-        totalGrades = "";
-        for (int i = 0; i < mGrade.size(); i++) {
-            Double grade = mGrade.get(i);
-            String subject = mSubjects.get(i);
-            totalGrades = totalGrades + subject + ": " + grade + "\n";
+        public String getName() {
+            return name;
         }
-        totalGrades = totalGrades + "Final Grade: " + mFinalGrade;
-        return totalGrades;
-    }
 
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getGrade() {
+            return grade;
+        }
+
+        public void setGrade(String grade) {
+            this.grade = grade;
+        }
+
+        /**
+         * setter-getter for Science Grade
+         */
+        public class Science {
+            private String name;
+            private String grade;
+
+            public Science(String name, String grade) {
+                this.name = name;
+                this.grade = grade;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getGrade() {
+                return grade;
+            }
+
+            public void setGrade(String grade) {
+                this.grade = grade;
+            }
+
+            /**
+             * setter-getter for Language Grade
+             */
+            public class Language {
+                private String name;
+                private String grade;
+
+                public Language(String name, String grade) {
+                    this.name = name;
+                    this.grade = grade;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getGrade() {
+                    return grade;
+                }
+
+                public void setGrade(String grade) {
+                    this.grade = grade;
+                }
+
+                /**
+                 * setter-getter for History Grade
+                 */
+                public class History {
+                    private String name;
+                    private String grade;
+
+                    public History(String name, String grade) {
+                        this.name = name;
+                        this.grade = grade;
+                    }
+
+                    public String getName() {
+                        return name;
+                    }
+
+                    public void setName(String name) {
+                        this.name = name;
+                    }
+
+                    public String getGrade() {
+                        return grade;
+                    }
+
+                    public void setGrade(String grade) {
+                        this.grade = grade;
+                    }
+
+                    /**
+                     * setter-getter for Band Grade
+                     */
+                    public class Band {
+                        private String name;
+                        private String grade;
+
+                        public Band(String name, String grade) {
+                            this.name = name;
+                            this.grade = grade;
+                        }
+
+                        public String getName() {
+                            return name;
+                        }
+
+                        public void setName(String name) {
+                            this.name = name;
+                        }
+
+                        public String getGrade() {
+                            return grade;
+                        }
+
+                        public void setGrade(String grade) {
+                            this.grade = grade;
+                        }
+
+                        /**
+                         * toString method which returns the contents of the class and name of the student
+                         */
+
+                        @Override
+                        public String toString() {
+                            return "name: " + "" + "grade: " + grade;
+
+                        }
+
+
+                        /**
+                         * final grade calculation of all subjects
+                         */
+                        public double getFinalGrade() {
+                            FinalGrade = 0.0;
+                            for (int i = 0; i < Grade.size(); i++) {
+                                double grade = Grade.get(i);
+                                FinalGrade = FinalGrade + grade;
+                            }
+                            FinalGrade = FinalGrade / Grade.size();
+                            return FinalGrade;
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
 }
-
